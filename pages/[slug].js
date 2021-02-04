@@ -23,26 +23,14 @@ function ProductPageContainer({ pageData, preview, slug }) {
   return <LandingPage page={page} />;
 }
 
-export async function getStaticProps({ params = {}, preview = false }) {
+export async function getServerSideProps({ params = {}, preview = false }) {
   const { slug } = params;
-  const { page: pageData } = await getClient(preview).fetch(query, {
+  const { page: pageData = null } = await getClient(preview).fetch(query, {
     slug,
   });
 
   return {
     props: { preview, pageData, slug },
-  };
-}
-
-export async function getStaticPaths() {
-  const routes = await getClient()
-    .fetch(`*[_type == "route" && defined(slug.current)]{
-    "params": {"slug": slug.current}
-  }`);
-
-  return {
-    paths: routes || null,
-    fallback: true,
   };
 }
 
