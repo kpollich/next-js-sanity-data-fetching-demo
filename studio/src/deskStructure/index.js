@@ -1,6 +1,5 @@
 import S from "@sanity/desk-tool/structure-builder";
 import { MdWeb, MdSettings, MdWhatshot, MdLooks } from "react-icons/md";
-import ads from "./ads";
 import categories from "./categories";
 import person from "./person";
 
@@ -50,7 +49,6 @@ export default () =>
               S.documentTypeListItem("page").title("Pages"),
             ])
         ),
-      ads,
       ...S.documentTypeListItems().filter(hiddenDocTypes),
     ]);
 

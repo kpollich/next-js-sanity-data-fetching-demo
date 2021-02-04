@@ -1,0 +1,44 @@
+query GetAboutPage {
+  allRoute(where: { slug: { current: { eq: "about" } } }) {
+    page {
+      _id
+      title
+      content {
+        ... on Hero {
+          _type
+          _key
+          heading
+          backgroundImage {
+            asset {
+              url
+            }
+          }
+        }
+        ... on ImageSection {
+          _type
+          _key
+          heading
+          label
+          image {
+            asset {
+              url
+            }
+          }
+          label
+          cta {
+            title
+            link
+          }
+          textRaw
+        }
+        ...on TextSection {
+          _type
+          _key
+          heading
+          label
+          textRaw 
+        }
+      }
+    }
+  }
+}

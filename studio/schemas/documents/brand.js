@@ -16,21 +16,8 @@ export default {
     },
     {
       name: "colors",
-      type: "object",
-      fields: [
-        {
-          name: "primary",
-          type: "color",
-        },
-        {
-          name: "secondary",
-          type: "color",
-        },
-        {
-          name: "ambient",
-          type: "color",
-        },
-      ],
+      title: "Colors",
+      type: "colors",
     },
     {
       name: "logo",

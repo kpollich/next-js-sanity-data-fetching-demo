@@ -10,13 +10,10 @@ import vendor from "./documents/vendor";
 import productVariant from "./documents/productVariant";
 import brand from "./documents/brand";
 import social from "./documents/social";
-import ad from "./documents/ad";
-import swag from "./documents/swag";
 import page from "./documents/page";
 import route from "./documents/route";
 import siteConfig from "./documents/siteConfig";
 import person from "./documents/person";
-import popup from "./documents/popup";
 
 // Object types
 import blockContent from "./objects/blockContent";
@@ -27,6 +24,8 @@ import link from "./objects/link";
 import portableText from "./objects/portableText";
 import simplePortableText from "./objects/simplePortableText";
 import contactInfo from "./objects/contactInfo";
+import colors from "./objects/colors";
+import imageWithAlt from "./objects/imageWithAlt";
 
 // Landing page sections
 import hero from "./objects/hero";
@@ -47,13 +46,10 @@ export default createSchema({
     // The following are document types which will appear
     // in the studio.
     product,
-    popup,
     vendor,
     category,
     brand,
     social,
-    ad,
-    swag,
     page,
     route,
     siteConfig,
@@ -74,5 +70,7 @@ export default createSchema({
     localeBlockContent,
     localeString,
     productVariant,
+    colors,
+    imageWithAlt,
   ]),
 });
