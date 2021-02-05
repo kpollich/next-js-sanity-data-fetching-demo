@@ -1,17 +1,24 @@
  query GetAllProducts {
     allProduct {
       _id
-      title
-      mainImage {
-        asset {
-          url
-        }
-      }
-      slug {
-        current
-      }
-      defaultProductVariant {
-        price
+    title
+    mainImage {
+      asset {
+        url
       }
     }
+    slug {
+      current
+    }
+    defaultProductVariant {
+      price
+    }
+    blurb {
+      en
+    }
+    body {
+      enRaw
+    }
+    tags
+  }
   }

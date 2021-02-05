@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { urlFor, PortableText, getClient } from "../utils/sanity";
+import { urlFor, PortableText } from "../utils/sanity";
 
 function ProductPage(props) {
   const [count, setCount] = useState(1);
@@ -91,7 +91,9 @@ function ProductPage(props) {
       </div>
       <div className="mt-16 md:w-2/3">
         <h3 className="text-gray-600 text-2xl font-medium">Description</h3>
-        {body && <PortableText blocks={body?.en} className="text-gray-600" />}
+        {body && (
+          <PortableText blocks={body?.enRaw} className="text-gray-600" />
+        )}
       </div>
     </div>
   );

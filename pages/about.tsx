@@ -5,7 +5,6 @@ import GetAboutPage from "../graphql/about/GetAboutPage.graphql";
 import { initializeApollo } from "../lib/apollo";
 
 function AboutPage({ pageData }) {
-  console.log(pageData);
   return <RenderSections sections={pageData.content} />;
 }
 

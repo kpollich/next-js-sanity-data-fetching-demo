@@ -1,6 +1,6 @@
 query GetProduct($slug: String!) {
   allProduct(where: { slug: { current: { eq: $slug } } }) {
-    _id
+   _id
     title
     mainImage {
       asset {
@@ -13,5 +13,12 @@ query GetProduct($slug: String!) {
     defaultProductVariant {
       price
     }
+    blurb {
+      en
+    }
+    body {
+      enRaw
+    }
+    tags
   }
 }

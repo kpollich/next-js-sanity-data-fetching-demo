@@ -3,15 +3,13 @@ import { upperFirst } from "lodash";
 import * as SectionComponents from "./sections";
 
 function resolveSections(section) {
-  // eslint-disable-next-line import/namespace
   const Section = SectionComponents[upperFirst(section._type)];
 
-  if (Section) {
-    return Section;
+  if (!Section) {
+    throw new Error(`Unrecognized section type: ${section.__type}`);
   }
 
-  console.error("Cant find section", section); // eslint-disable-line no-console
-  return null;
+  return Section;
 }
 
 function RenderSections(props) {
